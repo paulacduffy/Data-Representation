@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <technical>
+        <isbn>1506303056</isbn>
+        <title>Effective Data Visualization: The Right Chart for the Right Data</title>
+        <author>Stephanie Evergreen</author>
+    </technical>
+    <technical>
+        <isbn>1544351003</isbn>
+        <title>The Data Visualization Sketchbook</title>
+        <author>Stephanie Evergreen</author>
+    </technical>
+    <cookery>
+        <isbn>0743246268</isbn>
+        <title>Joy of Cooking</title>
+        <author>Irma S. Rombauer</author>
+    </cookery>
+    <cookery>
+        <isbn>9780470421352</isbn>
+        <title>The Professional Chef</title>
+        <author>The Culinary Institute of America</author>
+    </cookery>
+</library>
