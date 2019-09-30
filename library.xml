@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
-    <book category = "Technical">
-        <isbn>1506303056</isbn>
-        <title>Effective Data Visualization: The Right Chart for the Right Data</title>
-        <author>Stephanie Evergreen</author>
+    <book Category = "Technical">
+        <ISBN>1506303056</ISBN>
+        <Title>Data Visualization: The Right Chart for the Right Data</Title>    
+        <Author>Stephanie Evergreen</Author>
     </book>
-    <book category = "Technical">
-        <isbn>1544351003</isbn>
-        <title>The Data Visualization Sketchbook</title>
-        <author>Stephanie Evergreen</author>
+    <book Category = "Technical">
+        <ISBN>1544351003</ISBN>
+        <Title>Sketchbook</Title>
+        <Author>Stephanie Evergreen</Author>
     </book>
-    <book category = "Cookery">
-        <isbn>0743246268</isbn>
-        <title>Joy of Cooking</title>
-        <author>Irma S. Rombauer</author>
+    <book Category = "Cookery">
+        <ISBN>0743246268</ISBN>
+        <Title>The Joy of Cooking</Title>
+        <Author>Irma S. Rombauer</Author>
     </book>
-    <book category = "Cookery">
-        <isbn>9780470421352</isbn>
-        <title>The Professional Chef</title>
-        <author>The Culinary Institute of America</author>
+    <book Category = "Cookery">
+        <ISBN>9780470421</ISBN>
+        <Title>The Professional Chef</Title>
+        <Author>The Culinary Institute of America</Author>
     </book>
 </library>
