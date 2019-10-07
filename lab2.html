@@ -95,10 +95,41 @@ function showUpdate(buttonElement){
     document.getElementById('doCreateButton').style.display="none"
     document.getElementById('doUpdateButton').style.display="block"
 
-    
+    var rowElement = buttonElement.parentNode.parentNode
+
+    var car = getCarFromRow(rowElement)
+    populateFormWithCar(car)
 
 }
+function doCreate(){
+    var form = document.getElementById(createUpdateForm)
 
+    var car = {}
+    car.reg = form.querySelector('input[name = "reg"]').value 
+    car.make = form.querySelector('select[name = "make"]').value
+    car.model = form.querySelector('input[name = "model"]').value
+    car.price = form.querySelector('input[name = "price"]').value
+    console.log(JSON.stringify(car))
+
+    addCarToTable(car)
+    clearForm()
+
+    showViewAll()
+
+}
+function doUpdate(){
+    var car = getCarFromForm();
+    var rowElement = document.getElementById(car.reg)
+    setCarInRow(rowElement,car)
+
+    clearForm()
+    showViewAll()
+}
+function doDelete(r){
+    var tableElement = document.GetElementById('carTable')
+    var index = r.parentNode.parentNode.rowIndex;
+    tableElement.deleteRow(index);
+}
 
 </script>
 
