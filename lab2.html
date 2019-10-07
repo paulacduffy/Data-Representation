@@ -76,7 +76,30 @@ function showCreate(){
 
     document.getElementById('doCreateButton').style.display="block"
     document.getElementById('doUpdateButton').style.display="none"
+
 }
+function showViewAll(){
+    document.getElementById('showCreateButton').style.display="block"
+    document.getElementById('carTable').style.display="block"
+    document.getElementById('createUpdateForm').style.display="none"
+
+}
+function showUpdate(buttonElement){
+    document.getElementById('showCreateButton').style.display="none"
+    document.getElementById('carTable').style.display="none"
+    document.getElementById('createUpdateForm').style.display="block"
+
+    document.getElementById('createLabel').style.display="none"
+    document.getElementById('updateLabel').style.display="inline"
+
+    document.getElementById('doCreateButton').style.display="none"
+    document.getElementById('doUpdateButton').style.display="block"
+
+    
+
+}
+
+
 </script>
 
 </html>
