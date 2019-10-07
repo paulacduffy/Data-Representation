@@ -14,7 +14,7 @@
         </div>
         <h1>All Cars</h1><br/>
         <div>
-            <table class = "table">
+            <table class = "table" id = "carTable">
                 <tr>
                     <th>reg</th>
                     <th>make</th>
@@ -28,30 +28,30 @@
                     <th>Ford</th>
                     <th>Mondeo</th>
                     <th>25000</th>
-                    <th><button>Update</button></th>
-                    <th><button>Delete</button></th>
+                    <th><button onclick="showUpdate(this)">Update</button></th>
+                    <th><button onclick="doDelete(this)">Delete</button></th>
                 </tr>
                 <tr>
                     <th>12 D 123</th>
                     <th>Fiat</th>
                     <th>Punto</th>
                     <th>4000</th>
-                    <th><button>Update</button></th>
-                    <th><button>Delete</button></th>
+                    <th><button onclick="showUpdate(this)">Update</button></th>
+                    <th><button onclick="doDelete(this)">Delete</button></th>
                 </tr>
                 <tr>
                     <th>08 G 123</th>
                     <th>Nissan</th>
                     <th>Almera</th>
                     <th>500</th>
-                    <th><button>Update</button></th>
-                    <th><button>Delete</button></th>
+                    <th><button onclick="showUpdate(this)">Update</button></th>
+                    <th><button onclick="doDelete(this)">Delete</button></th>
                 </tr>
             </table>
 
         </div>
-        <div>
-            <h2><span>Create a</span> <span>Update this</span> Car</h2>
+        <div id = 'createUpdateForm' style = "display:none">
+            <h2><span id = "createLabel">Create a</span> <span id = "updateLabel">Update this</span> Car</h2>
             Reg <input type = "text" name = "Reg"><br/>
             Make <select name = "Make">
                     <option value = "Ford">Ford</option>
@@ -65,4 +65,18 @@
 
         </div>
     </body>
+<script>
+function showCreate(){
+    document.getElementById('showCreateButton').style.display="none"
+    document.getElementById('carTable').style.display="none"
+    document.getElementById('createUpdateForm').style.display="block"
+
+    document.getElementById('createLabel').style.display="inline"
+    document.getElementById('updateLabel').style.display="none"
+
+    document.getElementById('doCreateButton').style.display="block"
+    document.getElementById('doUpdateButton').style.display="none"
+}
+</script>
+
 </html>
