@@ -134,7 +134,7 @@ function doDelete(r){
 function addCarToTable(car){
     var tableElement = document.GetElementById('carTable')
     var rowElement = tableElement.insertRow(-1)
-    rowElement.setAttribute('id' car.reg)
+    rowElement.setAttribute('id', car.reg)
     var cell1 = rowElement.insertCell(0);
     cell1.innerHTML = car.reg
     var cell2 = rowElement.insertCell(1);
@@ -148,6 +148,51 @@ function addCarToTable(car){
     var cell6 = rowElement.insertCell(5);
     cell6.innerHTML = '<button onclick="doDelete(this)">Delete</button>'
 
+}
+function clearForm(){
+    var form = document.getElementById('createUpdateForm')
+    form.querySelector('input[name="reg"]').disabled = false
+    form.querySelector('input[name="reg"]').value = ''
+    form.querySelector('select[name="make"])'.value = ''
+    form.querySelector('input[name="model"]').value = ''
+    form.querySelector('input[name="price"]'.).value=''
+
+}
+function getCarFromRow(rowElement){
+    var car = {}
+    car.reg = rowElement.cells[0].firstChild.textContent
+    car.make = rowElement.cells[1].firstChild.textContent
+    car.model = rowElement.cells[2].firstChild.textContent
+    car.price = rowElement.cells[3].firstChild.textContent
+    return car
+    
+}
+function setCarInRow(rowElement,car){
+    rowElement.cells[0].firstChild.textContent=car.reg
+    rowElement.cells[1].firstChild.textContent=car.make
+    rowElement.cells[2].firstChild.textContent=car.model
+    rowElement.cells[3].firstChild.textContent=car.price
+    
+}
+function populateFormWithCar(car){
+    var form = document.getElementById('createUpdateForm')
+    form.querySelector('input[name="reg"]').disabled = true
+    form.querySelector('input[name="reg"]').value = car.reg
+    form.querySelector('input[name="make"]').value = car.make
+    form.querySelector('input[name="model"]').value = car.model
+    form.querySelector('input[name="price"]').value = car.price
+    return car
+
+}
+function getCarFromForm(){
+    var form = document.getElementById('createUpdateForm')
+    var car = {}
+    car.reg = form.querySelector('input[name="reg"]').value
+    car.make = form.querySelector('select[name="make"]').value
+    car.model = form.querySelector('input[name="model"]').value
+    car.price = form.querySelector('input[name="price"]').value
+    console.log(JSON.stringify(car))
+    return car
 }
 </script>
 
