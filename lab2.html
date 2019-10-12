@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>view Cars</title>
         <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
-        <title>View cars</title>
     </head>
     <body>
         <h1>Cars</h1><br/>
         <div>
             <button id="showCreateButton" onclick = "showCreate()">Create</button>
         </div>
-        <h1>All Cars</h1><br/>
         <div>
             <table class = "table" id = "carTable">
                 <tr>
@@ -23,29 +22,29 @@
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
-                <tr>
-                    <th>191 MO 123</th>
-                    <th>Ford</th>
-                    <th>Mondeo</th>
-                    <th>25000</th>
-                    <th><button onclick="showUpdate(this)">Update</button></th>
-                    <th><button onclick="doDelete(this)">Delete</button></th>
+                <tr id = "191 MO 123">
+                    <td>191 MO 123</td>
+                    <td>Ford</td>
+                    <td>Mondeo</td>
+                    <td>25000</td>
+                    <td><button onclick="showUpdate(this)">Update</button></td>
+                    <td><button onclick="doDelete(this)">Delete</button></td>
                 </tr>
-                <tr>
-                    <th>12 D 123</th>
-                    <th>Fiat</th>
-                    <th>Punto</th>
-                    <th>4000</th>
-                    <th><button onclick="showUpdate(this)">Update</button></th>
-                    <th><button onclick="doDelete(this)">Delete</button></th>
+                <tr id = "12 D 123">
+                    <td>12 D 123</td>
+                    <td>Fiat</td>
+                    <td>Punto</td>
+                    <td>4000</td>
+                    <td><button onclick="showUpdate(this)">Update</button></td>
+                    <td><button onclick="doDelete(this)">Delete</button></td>
                 </tr>
-                <tr>
-                    <th>08 G 123</th>
-                    <th>Nissan</th>
-                    <th>Almera</th>
-                    <th>500</th>
-                    <th><button onclick="showUpdate(this)">Update</button></th>
-                    <th><button onclick="doDelete(this)">Delete</button></th>
+                <tr id = "08 G 123">
+                    <td>08 G 123</td>
+                    <td>Nissan</td>
+                    <td>Almera</td>
+                    <td>500</td>
+                    <td><button onclick="showUpdate(this)">Update</button></td>
+                    <td><button onclick="doDelete(this)">Delete</button></td>
                 </tr>
             </table>
 
