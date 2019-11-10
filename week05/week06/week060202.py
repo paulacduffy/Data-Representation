@@ -2,7 +2,7 @@ import requests
 import json
 
 apiKey = 'f1f9586376acdc8348dda04bc42bf48eec0b8bee'
-url = 'https://github.com/paulacduffy/week06lab'
+url = 'https://api.github.com/repos/paulacduffy/week06lab'
 
 filename ="repo.json"
 
