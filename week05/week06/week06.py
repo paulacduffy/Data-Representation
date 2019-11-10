@@ -42,6 +42,35 @@ response = requests.put(url, json=dataString)
 
 url = 'http://127.0.0.1:5000/cars/08%20C%201234'
 response = requests.delete(url)
-print (response.status_code)
-print (response.text)
+#print (response.status_code)
+#print (response.text)
+
+url = "https://api.github.com/users/andrewbeattycourseware/followers"
+response = requests.get(url)
+data = response.json()
+#print(data)
+#Get the file name for the new file to write
+for githubuser in data["githubusers"]:
+    filename = 'githubusers.json'
+    with open(filename, 'w') as f:
+        json.dump(data, f, indent=4)
+
+w = Workbook()
+ws = w.add_sheet('githubusers')
+row = 0;
+ws.write(row,0,"login")
+ws.write(row,1,"id")
+ws.write(row,2,"node_id")
+ws.write(row,3,"avatar_url")
+row += 1
+for githubuser in data["githubusers"]:
+ ws.write(row,0, githubuser["login"])
+ ws.write(row,1,githubuser["id"])
+ ws.write(row,2,githubuser["node_id"])
+ ws.write(row,3,githubuser["avatar_url"])
+ row += 1
+w.save('githubusers.xls')
+
+
+
 
