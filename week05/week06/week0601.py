@@ -43,7 +43,7 @@ response = requests.put(url, json=dataString)
 url = 'http://127.0.0.1:5000/cars/08%20C%201234'
 response = requests.delete(url)
 #print (response.status_code)
-#print (response.text)
+print (response.text)
 
 url = "https://api.github.com/users/andrewbeattycourseware/followers"
 response = requests.get(url)
