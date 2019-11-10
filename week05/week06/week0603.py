@@ -19,5 +19,5 @@ newContents = contentOfFile + " more stuff \n"
 
 gitHubResponse=repo.update_file(fileInfo.path,"updated by prog",newContents
 ,fileInfo.sha)
-print (gitHubResponse)
+#print (gitHubResponse)
 
