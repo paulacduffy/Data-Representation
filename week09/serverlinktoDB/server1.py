@@ -3,12 +3,6 @@ from bookDAO import bookDAO
 
 app = Flask(__name__, static_url_path='', static_folder='.')
 
-#app = Flask(__name__)
-
-#@app.route('/')
-#def index():
-#    return "Hello, World!"
-
 #curl "http://127.0.0.1:5000/books"
 @app.route('/books')
 def getAll():
