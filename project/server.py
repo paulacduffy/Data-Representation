@@ -4,7 +4,7 @@ from flask_cors import CORS
 app = Flask(__name__, static_url_path='', static_folder='.')
 CORS(app)
 
-@app.route('/')
+@app.route('/pageone/')
 def pageone():
     return render_template('pageone.html')
 
