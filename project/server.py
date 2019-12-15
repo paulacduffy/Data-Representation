@@ -1,10 +1,13 @@
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, render_template
 from stockDAO import stockDAO
 from flask_cors import CORS
 app = Flask(__name__, static_url_path='', static_folder='.')
 CORS(app)
 
 @app.route('/pageone')
+def pageone():
+    return render_template('pageone.html')
+
 
 @app.route('/stock')
 def getAll():
