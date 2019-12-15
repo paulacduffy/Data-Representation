@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request, abort, render_template
 from stockDAO import stockDAO
-from flask_cors import CORS
-app = Flask(__name__, static_url_path='', static_folder='.')
-CORS(app)
+#from flask_cors import CORS
+#app = Flask(__name__, static_url_path='', static_folder='.')
+#CORS(app)
 
 @app.route('/pageone/')
 def pageone():
