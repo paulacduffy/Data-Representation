@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request, abort
 from stockDAO import stockDAO
-#from flask_cors import CORS
+from flask_cors import CORS
 app = Flask(__name__, static_url_path='', static_folder='.')
-#CORS(app)
+CORS(app,resources={r"/*": {"origins": "*"}})
 
 #curl "http://127.0.0.1:5000/books"
 @app.route('/stock')
