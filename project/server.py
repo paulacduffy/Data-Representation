@@ -4,7 +4,7 @@ from stockDAO import stockDAO
 app = Flask(__name__, static_url_path='', static_folder='.')
 #CORS(app)
 
-@app.route('/pageone')
+@app.route('/')
 def pageone():
     return render_template('pageone.html')
 
