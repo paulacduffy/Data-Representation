@@ -2,23 +2,24 @@ from flask import Flask, jsonify, request, abort
 from stockDAO import stockDAO
 from flask_cors import CORS
 app = Flask(__name__, static_url_path='', static_folder='.')
-CORS(app,resources={r"/*": {"origins": "*"}})
+CORS(app)
 
-#curl "http://127.0.0.1:5000/books"
+@app.route('/pageone')
+
 @app.route('/stock')
 def getAll():
     #print("in getall")
     results = stockDAO.getAll()
     return jsonify(results)
 
-#curl "http://127.0.0.1:5000/books/2"
+
 @app.route('/stock/<int:id>')
 def findById(id):
     foundStock = stockDAO.findByID(id)
 
     return jsonify(foundStock)
 
-#curl  -i -H "Content-Type:application/json" -X POST -d "{\"Title\":\"hello\",\"Author\":\"someone\",\"Price\":123}" http://127.0.0.1:5000/books
+
 @app.route('/stock', methods=['POST'])
 def create():
     
@@ -35,7 +36,7 @@ def create():
     stock['id'] = newId
     return jsonify(stock)
 
-#curl  -i -H "Content-Type:application/json" -X PUT -d "{\"Title\":\"hello\",\"Author\":\"someone\",\"Price\":123}" http://127.0.0.1:5000/books/1
+
 @app.route('/stock/<int:id>', methods=['PUT'])
 def update(id):
     foundStock = stockDAO.findByID(id)
