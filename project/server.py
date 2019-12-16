@@ -1,12 +1,11 @@
 from flask import Flask, jsonify, request, abort, render_template
 from stockDAO import stockDAO
-from config import Config
-from form import LogInForm
+
 
 #from flask_cors import CORS
 app = Flask(__name__, static_url_path='', static_folder='.')
 #CORS(app)
-app.config.from_object(Config)
+
 
 
 
@@ -15,11 +14,6 @@ app.config.from_object(Config)
 @app.route('/')
 def pageone():
     return render_template('pageone.html')
-
-@app.route('/stafflogin')
-def login():
-    form = LoginForm()
-    return render_template('login.html', title='Sign In', form=form)
 
 @app.route('/stock')
 def getAll():
