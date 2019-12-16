@@ -6,6 +6,10 @@ from stockDAO import stockDAO
 app = Flask(__name__, static_url_path='', static_folder='.')
 #CORS(app)
 
+@app.route('/')
+def pageone():
+    return render_template('pageone.html')
+
 @app.route('/stafflogin', methods=['GET', 'POST'])
 def stafflogin():
     error = None
@@ -15,13 +19,6 @@ def stafflogin():
         else:
             return redirect(url_for('home'))
     return render_template('stafflogin.html', error=error)
-
-
-
-
-@app.route('/')
-def pageone():
-    return render_template('pageone.html')
 
 @app.route('/stock')
 def getAll():
