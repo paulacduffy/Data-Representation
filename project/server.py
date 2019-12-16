@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort, render_template
+from flask import Flask, jsonify, request, abort, render_template, redirect, url_for
 from stockDAO import stockDAO
 
 
@@ -6,7 +6,15 @@ from stockDAO import stockDAO
 app = Flask(__name__, static_url_path='', static_folder='.')
 #CORS(app)
 
-
+@app.route('/stafflogin', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            return redirect(url_for('home'))
+    return render_template('stafflogin.html', error=error)
 
 
 
