@@ -7,7 +7,7 @@ app = Flask(__name__, static_url_path='', static_folder='.')
 #CORS(app)
 
 @app.route('/stafflogin', methods=['GET', 'POST'])
-def login():
+def stafflogin():
     error = None
     if request.method == 'POST':
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
