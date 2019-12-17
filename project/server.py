@@ -10,7 +10,7 @@ app = Flask(__name__, static_url_path='', static_folder='.')
 def pageone():
     return render_template('pageone.html')
 
-@app.route('/stafflogin')#, methods=['GET', 'POST'])
+@app.route('/stafflogin/')#, methods=['GET', 'POST'])
 def stafflogin():
     #error = None
     #if request.method == 'POST':
