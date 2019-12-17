@@ -10,15 +10,15 @@ app = Flask(__name__, static_url_path='', static_folder='.')
 def pageone():
     return render_template('pageone.html')
 
-@app.route('/stafflogin', methods=['GET', 'POST'])
+@app.route('/stafflogin')#, methods=['GET', 'POST'])
 def stafflogin():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid Credentials. Please try again.'
-        else:
-            return redirect(url_for('pageone'))
-    return render_template('stafflogin.html', error=error)
+    #error = None
+    #if request.method == 'POST':
+        #if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            #error = 'Invalid Credentials. Please try again.'
+        #else:
+            #return redirect(url_for('pageone'))
+    return render_template('stafflogin.html')#, error=error)
 
 @app.route('/stock')
 def getAll():
