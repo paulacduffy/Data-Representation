@@ -17,7 +17,7 @@ def stafflogin():
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
             error = 'Invalid Credentials. Please try again.'
         else:
-            return redirect(url_for('home'))
+            return redirect(url_for('pageone'))
     return render_template('stafflogin.html', error=error)
 
 @app.route('/stock')
