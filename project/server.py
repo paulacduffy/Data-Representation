@@ -8,10 +8,7 @@ app = Flask(__name__, static_url_path='', static_folder='.')
 #CORS(app)
 
 app.secret_key = "paulalovesvintage"
-@app.route('/')
-@login_required
-def pageone():
-    return render_template('pageone.html')
+
 
 def login_required(f):
     @wraps(f)
@@ -22,6 +19,11 @@ def login_required(f):
             flash('You need to login first')
             return redirect(url_for('stafflogin'))
     return wrap
+
+@app.route('/')
+@login_required
+def pageone():
+    return render_template('pageone.html')
 
 
 @app.route('/stafflogin/', methods=['GET', 'POST'])
