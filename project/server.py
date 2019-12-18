@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort, render_template, redirect, url_for
+from flask import Flask, jsonify, request, abort, render_template, redirect, url_for, session
 from stockDAO import stockDAO
 
 
@@ -17,8 +17,14 @@ def stafflogin():
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
             error = 'Invalid Credentials. Please try again.'
         else:
+            session['logged_in'] = True
             return redirect(url_for('pageone'))
     return render_template('stafflogin.html', error=error)
+
+@app.route('/logout')
+    def logout():
+        session.pop('logged_in', None)
+        return redirect(url_for('pageone'))
 
 @app.route('/stock')
 def getAll():
