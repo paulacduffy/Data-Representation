@@ -9,6 +9,7 @@ app = Flask(__name__, static_url_path='', static_folder='.')
 
 app.secret_key = "paulalovesvintage"
 @app.route('/')
+@login_required
 def pageone():
     return render_template('pageone.html')
 
