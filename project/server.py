@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, abort, render_template, redirect, url_for, session, flash
 from stockDAO import stockDAO
+from functools import wrap
 
 
 #from flask_cors import CORS
@@ -11,7 +12,19 @@ app.secret_key = "paulalovesvintage"
 def pageone():
     return render_template('pageone.html')
 
+def login_required(f):
+    @wraps(f)
+    def wraps(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('You need to login first')
+            return redirect(url_for('login'))
+    return wrap
+
+
 @app.route('/stafflogin/', methods=['GET', 'POST'])
+@login_required
 def stafflogin():
     error = None
     if request.method == 'POST':
