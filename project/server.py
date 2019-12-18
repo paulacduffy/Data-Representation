@@ -21,13 +21,13 @@ def login_required(f):
     return wrap
 
 @app.route('/')
-@login_required
+#@login_required
 def pageone():
     return render_template('pageone.html')
 
 
 @app.route('/stafflogin/', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def stafflogin():
     error = None
     if request.method == 'POST':
