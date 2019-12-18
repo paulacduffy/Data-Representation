@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, abort, render_template, redirect, url_for, session, flash
 from stockDAO import stockDAO
-from functools import wrap
+from functools import wraps
 
 
 #from flask_cors import CORS
