@@ -17,7 +17,7 @@ def login_required(f):
             return f(*args, **kwargs)
         else:
             flash('You need to login first')
-            return redirect(url_for('stafflogin'))
+            return redirect(url_for('/'))
     return wrap
 
 @app.route('/')
