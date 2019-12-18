@@ -19,12 +19,14 @@ def stafflogin():
             error = 'Invalid Credentials. Please try again.'
         else:
             session['logged_in'] = True
+            flash(Login successful!)
             return redirect(url_for('pageone'))
     return render_template('stafflogin.html', error=error)
 
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
+    flash(You have logged out!)
     return redirect(url_for('pageone'))
 
 @app.route('/stock')
