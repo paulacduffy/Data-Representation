@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort, render_template, redirect, url_for, session
+from flask import Flask, jsonify, request, abort, render_template, redirect, url_for, session, flash
 from stockDAO import stockDAO
 
 
