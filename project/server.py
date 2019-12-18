@@ -14,7 +14,7 @@ def pageone():
 
 def login_required(f):
     @wraps(f)
-    def wraps(*args, **kwargs):
+    def wrap(*args, **kwargs):
         if 'logged_in' in session:
             return f(*args, **kwargs)
         else:
