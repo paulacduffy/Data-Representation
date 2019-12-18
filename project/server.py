@@ -22,9 +22,9 @@ def stafflogin():
     return render_template('stafflogin.html', error=error)
 
 @app.route('/logout')
-    def logout():
-        session.pop('logged_in', None)
-        return redirect(url_for('pageone'))
+def logout():
+    session.pop('logged_in', None)
+    return redirect(url_for('pageone'))
 
 @app.route('/stock')
 def getAll():
