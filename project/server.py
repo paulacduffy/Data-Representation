@@ -52,7 +52,7 @@ def stafflogin():
             msg = 'Incorrect username/password!'
 
            
-    return render_template('stafflogin.html', error=error)
+    return render_template('stockviewer.html', error=error)
 
 @app.route('/logout')
 def logout():
