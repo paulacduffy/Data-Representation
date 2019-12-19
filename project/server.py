@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, abort, render_template, redirect, url_for, session, flash
 from stockDAO import stockDAO
+from accountsDAO import accountsDAO
 from functools import wraps
 
 
@@ -7,7 +8,6 @@ from functools import wraps
 app = Flask(__name__, static_url_path='', static_folder='.')
 #CORS(app)
 
-app.secret_key = "paulalovesvintage"
 
 
 def login_required(f):
@@ -35,10 +35,7 @@ def stafflogin():
         username = request.form['username']
         password = request.form['password']
         error = 'Invalid Credentials. Please try again.'
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password))
-        # Fetch one record and return result
-        account = cursor.fetchone()
+        account = accountsDAO.fetchone()
         if account:
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
