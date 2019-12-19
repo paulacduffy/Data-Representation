@@ -30,13 +30,27 @@ def pageone():
 #@login_required
 def stafflogin():
     error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid Credentials. Please try again.'
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        # Create variables for easy access
+        username = request.form['username']
+        password = request.form['password']
+        error = 'Invalid Credentials. Please try again.'
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password))
+        # Fetch one record and return result
+        account = cursor.fetchone()
+        if account:
+            # Create session data, we can access this data in other routes
+            session['loggedin'] = True
+            session['id'] = account['id']
+            session['username'] = account['username']
+            # Redirect to home page
+            return 'Logged in successfully!'
         else:
-            session['logged_in'] = True
-            flash('Login successful!')
-            return redirect(url_for('pageone'))
+            # Account doesnt exist or username/password incorrect
+            msg = 'Incorrect username/password!'
+
+           
     return render_template('stafflogin.html', error=error)
 
 @app.route('/logout')
