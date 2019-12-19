@@ -41,7 +41,7 @@ def stafflogin():
             session['loggedin'] = True
             session['id'] = account['id']
             session['username'] = account['username']
-            #session['password'] = account['password']
+            session['password'] = account['password']
             # Redirect to home page
             return 'Logged in successfully!'
         else:
