@@ -42,8 +42,9 @@ def stafflogin():
         if account:
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
-            session['id'] = account['id']
+            #session['id'] = account['id']
             session['username'] = account['username']
+            session['password'] = account['password']
             # Redirect to home page
             return 'Logged in successfully!'
         else:
