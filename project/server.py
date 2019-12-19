@@ -29,7 +29,7 @@ def pageone():
 @app.route('/stafflogin/', methods=['GET', 'POST'])
 #@login_required
 def stafflogin():
-    error = None
+    msg = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         # Create variables for easy access
         username = request.form['username']
