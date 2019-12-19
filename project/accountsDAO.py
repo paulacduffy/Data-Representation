@@ -11,18 +11,18 @@ class AccountsDAO:
         database=cfg.mysql['database']
         )
     
-    def getAll(self):
+    def getOne(self):
         cursor = self.db.cursor()
-        sql="select * from stock"
+        sql="select * from accounts"
         cursor.execute(sql)
-        results = cursor.fetchall()
-        returnArray = []
-        print(results)
-        for result in results:
-            print(result)
-            returnArray.append(self.convertToDictionary(result))
+        results = cursor.fetchone()
+        #returnArray = []
+        #print(results)
+        #for result in results:
+            #print(result)
+            #returnArray.append(self.convertToDictionary(result))
 
-        return returnArray
+        return results
 
     def convertToDictionary(self, result):
         colnames=['id','username','password','email']
