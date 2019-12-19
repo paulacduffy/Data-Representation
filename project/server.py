@@ -34,14 +34,14 @@ def stafflogin():
         # Create variables for easy access
         username = request.form['username']
         password = request.form['password']
-        error = 'Invalid Credentials. Please try again.'
+        #error = 'Invalid Credentials. Please try again.'
         account = accountsDAO.fetchone()
         if account:
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
-            #session['id'] = account['id']
+            session['id'] = account['id']
             session['username'] = account['username']
-            session['password'] = account['password']
+            #session['password'] = account['password']
             # Redirect to home page
             return 'Logged in successfully!'
         else:
@@ -49,7 +49,7 @@ def stafflogin():
             msg = 'Incorrect username/password!'
 
            
-    return render_template('stafflogin.html', error=error)
+    return render_template('stafflogin.html', msg=msg)
 
 @app.route('/logout')
 def logout():
