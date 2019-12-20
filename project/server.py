@@ -7,7 +7,7 @@ from functools import wraps
 #from flask_cors import CORS
 app = Flask(__name__, static_url_path='', static_folder='.')
 #CORS(app)
-app.static_folder = 'static'
+#app.static_folder = 'static'
 
 
 
