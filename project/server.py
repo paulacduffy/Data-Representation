@@ -52,7 +52,7 @@ def stafflogin():
            
     return render_template('stafflogin.html', msg=msg)
 
-@app.route('/stafflogin/register', methods=['GET', 'POST'])
+@app.route('/stafflogin/register/', methods=['GET', 'POST'])
 def register():
     # Output message if something goes wrong...
     msg = ''
