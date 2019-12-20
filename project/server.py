@@ -76,7 +76,7 @@ def register():
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
             accountsDAO.create()
     
-    return render_template('/register.html', msg=msg)
+    return render_template('register.html', msg=msg)
 
 @app.route('/logout')
 def logout():
