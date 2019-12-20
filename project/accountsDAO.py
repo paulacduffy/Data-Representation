@@ -23,6 +23,13 @@ class AccountsDAO:
             #returnArray.append(self.convertToDictionary(result))
 
         return results
+    def create(self, values):
+        cursor = self.db.cursor()
+        sql="insert into accounts (username, password,email) values (%s,%s,%s)"
+        cursor.execute(sql, values)
+
+        self.db.commit()
+        return cursor.lastrowid
 
     def convertToDictionary(self, result):
         colnames=['id','username','password','email']
