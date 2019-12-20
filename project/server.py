@@ -77,12 +77,14 @@ def register():
             accountsDAO.create()
     
     return render_template('register.html', msg=msg)
-
 @app.route('/logout')
 def logout():
-    session.pop('logged_in', None)
-    flash('You have logged out!')
-    return redirect(url_for('pageone'))
+    
+   session.pop('loggedin', None)
+   session.pop('id', None)
+   session.pop('username', None)
+   # Redirect to login page
+   return redirect(url_for('login'))
 
 @app.route('/stock')
 def getAll():
