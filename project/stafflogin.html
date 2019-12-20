@@ -1,26 +1,28 @@
 <html>
   <head>
     <title>stafflogin page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
   <body>
       <div class="login">
           <h1>Staff Login</h1>
-          <div >
+          <div class = "links">
             <a href="{{ url_for('stafflogin') }}" class="active">Login</a>
             <a href="#">Register</a>
           </div>
           <form action="{{ url_for('stafflogin') }}" method="post">
             <label for="username">
-              
+                <i class="fas fa-user"></i>
             </label>
             <input type="text" name="username" placeholder="Username" id="username" required>
             <label for="password">
-              
+                <i class="fas fa-lock"></i>
             </label>
             <input type="password" name="password" placeholder="Password" id="password" required>
-            
+            <div class="msg">{{ msg }}</div>
             <input type="submit" value="login">
           </form>
         </div>
