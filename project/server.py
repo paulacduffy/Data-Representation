@@ -77,7 +77,7 @@ def register():
             accountsDAO.create()
     
     return render_template('register.html', msg=msg)
-@app.route('/logout')
+@app.route('/logout/')
 def logout():
     
    session.pop('loggedin', None)
