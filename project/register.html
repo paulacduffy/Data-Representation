@@ -5,10 +5,10 @@
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
-		<div class = "container bg-info text-black" >
+		<div class = "container bg-info text-white" >
 			<h1>Register</h1>
-			    <a href="/stafflogin.html">Login</a>
-				<a href="{{ url_for('register') }}" >Register</a>
+			    <a href="/stafflogin.html" class="text-light bg-dark">Login</a>
+				<a href="{{ url_for('register') }}"class="text-light bg-dark">Register</a>
 			</div>
 			<form action="{{ url_for('register') }}" method="post" autocomplete="off">
 				<label for="username">
