@@ -8,8 +8,10 @@
 	<body>
 		<div class = "container bg-info text-white" >
 			<h1>Login</h1>
-			<div >
-				<a href="{{ url_for('login') }}" class="active"></a>
+			<div class = "container bg-info text-white">
+				
+				<a href="{{ url_for('login') }}">Login</a>
+				<a href="{{ url_for('register') }}" >Register</a>
 				
 			</div>
 			<form action="{{ url_for('login') }}" method="post">
